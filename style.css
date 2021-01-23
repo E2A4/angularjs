@@ -1,0 +1,238 @@
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 100%;
+  font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+  padding: 0 15px;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.column {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 5px;
+  background-color: #efefef;
+}
+
+.offer-box {
+  border: 1px solid #9d9d9d;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px;
+  padding-top: 20px;
+  background-color: #fff;
+  min-height: 125px;
+}
+
+.offer-box:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.offer-box .buy-button {
+  padding: 0 15px;
+  background-color: #0086cd;
+  color: #fff;
+}
+
+.offer-box .company-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offer-box .company-wrapper .company-logo {
+  padding: 10px;
+  border-right: 1px solid #9d9d9d;
+  max-width: 100px;
+}
+
+.offer-box .company-wrapper .company-logo img {
+  width: 100%;
+}
+
+.offer-box .company-wrapper .company-package-wrapper {
+  padding-left: 15px;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .package-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper .company-name {
+  font-size: 12px;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper .info-logo {
+  width: 15px;
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper .info-logo .tooltip {
+  visibility: hidden;
+  width: 150px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #0086cd;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+  margin-left: 0px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  font-size: 10px;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper .info-logo .tooltip--title {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper .info-logo .tooltip--desc {
+  text-align: left;
+}
+
+.offer-box .company-wrapper .company-package-wrapper .company-name-wrapper .info-logo:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.offer-box .price-wrapper {
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 90px;
+}
+
+.offer-box .price-wrapper .price-before-discount {
+  font-size: 12px;
+}
+
+.offer-box .price-wrapper .price-before-discount span {
+  text-decoration: line-through;
+}
+
+.offer-box .price-wrapper .price-after-discount, .offer-box .price-wrapper .final-price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.offer-box .price-wrapper a.buy-discounted {
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #0086cd;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  min-width: 128px;
+  min-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.offer-box .price-wrapper a.buy-on-call {
+  padding: 3px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #0086cd;
+  border-radius: 3px;
+  color: #0086cd;
+  line-height: 1.1;
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: none;
+  min-width: 140px;
+  min-height: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.offer-box .price-wrapper a.buy-on-call span:first-child {
+  font-weight: 400;
+}
+
+.offer-box .price-wrapper a.buy-on-call span:last-child {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

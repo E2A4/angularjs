@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr" ng-app="jrApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read JSON</title>
+    <!-- <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.0.7/angular.min.js"
+        data-semver="1.0.7"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container" ng-controller="ResCtrl">
+            <div class="row">
+                <div class="column">
+                    <div class="offer-box-wrapper" >
+                        <div class="offer-box" ng-repeat="resources in infos.offerList">
+                            <div class="company-wrapper">
+                                <div class="company-logo">
+                                    <img src="{{resources.ImagePath}}">
+                                </div>
+                                <div class="company-package-wrapper">
+                                    <div class="package-name">
+                                        {{ resources.ProductDesc }}
+                                    </div>
+                                    <div class="company-name-wrapper">
+                                    <div class="company-name">
+                                        {{ resources.FirmName}}
+                                    </div>
+                                    <div class="info-logo" ng-if="resources.popoverContent">
+                                        <img src="icons/info.svg" alt="info mark">
+                                        <div class="tooltip" ng-repeat="tooltip in resources.popoverContent">
+                                        <div class="tooltip--title">{{tooltip.Title}}</div>
+                                        <div class="tooltip--desc">{{tooltip.Description}}</div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="price-wrapper">
+                                <div class="price-before-discount" ng-if="resources.QuotaInfo.HasDiscount">
+                                    <div>Peşin <span> {{resources.Cash | currency:'TL':2 }}</span></div>
+                                    <div class="price-after-discount">{{resources.QuotaInfo.PremiumWithDiscount | currency:'TL':2}}</div>
+                                </div>
+                                <div class="price-without-discount" ng-if="resources.QuotaInfo.HasDiscount == false">
+                                    <div class="final-price">{{resources.Cash | currency:'TL':2 }}</div>
+                                </div>
+                                    <a href="#" class="buy-discounted" ng-if="resources.SaleClosed == false">SATIN AL</a>
+                                    <a href="tel:+902124442400" class="buy-on-call" ng-if="resources.SaleClosed">
+                                        <span>TELEFONDA SATIN AL</span>
+                                        <span>444 20 00</span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.4.5/angular-locale_tr-tr.js"></script>
+    <script>
+        var app = angular.module("jrApp", []);
+        app.controller('ResCtrl', function ($scope, $http) {
+            $http.get('http://127.0.0.1:5500/listing-data.json')
+                .success(function (data) {
+                    $scope.infos = data;
+                });
+            $scope.parJson = function (json) {
+                return angular.fromJson(json);
+            }
+        });
+    </script>
+</body>
+
+</html>

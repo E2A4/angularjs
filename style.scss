@@ -1,0 +1,178 @@
+$blue: #0086cd;
+$black: #000;
+$grey: #9d9d9d;
+$white: #fff;
+$light-grey: #efefef;
+
+body{ font-family: 'Open Sans', Arial, Helvetica, sans-serif; margin: 0;}
+.container{
+    max-width: 100%;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    padding: 0 15px;
+}
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.column{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding: 5px;
+    background-color: $light-grey;
+}
+.offer-box{
+    border: 1px solid $grey;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top: 20px;
+    background-color: $white;
+    min-height: 125px;
+    &:not(:last-child){
+        margin-bottom: 20px;
+    }
+    .buy-button{
+        padding: 0 15px;
+        background-color: $blue;
+        color: $white;
+    }
+    .company-wrapper{
+        display: flex;
+        align-items: center;
+        .company-logo{
+            padding: 10px;
+            border-right: 1px solid $grey;
+            max-width: 100px;
+            img{
+                width: 100%;
+            }
+        }
+        .company-package-wrapper{
+            padding-left: 15px;
+            .package-name{
+                font-size: 12px;
+                font-weight: 700;
+            }
+            .company-name-wrapper{
+                display: flex;
+                .company-name{
+                    font-size: 12px;
+                }
+                .info-logo{
+                    width: 15px;
+                    margin-left: 10px;
+                    position: relative;
+                    display: inline-block;
+                    .tooltip{
+                        visibility: hidden;
+                        width: 150px;
+                        background-color: $white;
+                        color: $black;
+                        text-align: center;
+                        border-radius: 6px;
+                        padding: 10px;
+                        border-radius: 3px;
+                        border:1px solid $blue;
+                        position: absolute;
+                        z-index: 1;
+                        top: 100%;
+                        left: 0%;
+                        margin-left: 0px;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        font-size: 10px;
+                        &--title{
+                            font-weight: 600;
+                            font-size:12px;
+                            margin-bottom: 10px;
+                        }
+                        &--desc{
+                            text-align: left;
+                        }
+                    }
+                    &:hover{
+                        .tooltip{
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .price-wrapper{
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 90px;
+        .price-before-discount{
+            font-size: 12px;
+            span{
+                text-decoration: line-through;
+            }
+        }
+        .price-after-discount, .final-price{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        a.buy-discounted{
+            padding: 5px 10px;
+            text-align: center;
+            background-color: $blue;
+            color: $white;
+            font-size: 12px;
+            font-weight: 400;
+            text-decoration: none;
+            min-width: 128px;
+            min-height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        a.buy-on-call{
+            padding: 3px;
+            text-align: center;
+            background-color: $white;
+            border: 1px solid $blue;
+            border-radius: 3px;
+            color: $blue;
+            line-height: 1.1;
+            font-size: 10px;
+            font-weight: 400;
+            text-decoration: none;
+            min-width: 140px;
+            min-height: 27px;
+            display: flex;
+            flex-direction: column;
+            span:first-child{font-weight: 400}
+            span:last-child{font-weight: 600; font-size: 14px;}
+        }
+    }
+}
+
+@media(min-width: 576px){
+    .container{
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 768px){
+    .container{
+        max-width: 720px;
+    }
+}
+
+@media(min-width: 1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
