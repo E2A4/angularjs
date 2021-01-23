@@ -1,0 +1,1 @@
+You can run this project on localhost (port: 5500).
