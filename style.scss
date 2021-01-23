@@ -5,22 +5,29 @@ $white: #fff;
 $light-grey: #efefef;
 
 body{ font-family: 'Open Sans', Arial, Helvetica, sans-serif; margin: 0;}
+main{height: 100vh;}
 .container{
     max-width: 100%;
     font-family: 'Open Sans',Arial,Helvetica,sans-serif;
     padding: 0 15px;
+    height: 100%;
 }
 .row{
     margin-right: -15px;
     margin-left: -15px;
+    height: 100%;
 }
 .column{
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
     position: relative;
     padding: 5px;
     background-color: $light-grey;
+    display: flex;
+    align-items: center;
 }
+.offer-box-wrapper{width: 100%;}
 .offer-box{
     border: 1px solid $grey;
     width:100%;
